@@ -1,8 +1,7 @@
 ## pupil labs time sync
-
-
 import zmq
 import time 
+
 
 ctx = zmq.Context()
 # The REQ talks to Pupil remote and receives the session unique IPC SUB PORT
@@ -22,7 +21,7 @@ pub_port = pupil_remote.recv_string()
 # Assumes `sub_port` to be set to the current subscription port
 subscriber = ctx.socket(zmq.SUB)
 subscriber.connect(f'tcp://{ip}:{sub_port}')
-subscriber.subscribe('pupil.0')  # 0 (right?) pupil  messages
+subscriber.subscribe('pupil.0')  # 0 (0 = right, 1 = left) pupil  messages. Doesn't matter which if you just want timestamp 
 
 # we need a serializer
 import msgpack
