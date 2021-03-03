@@ -5,8 +5,8 @@
                  xmlns:res="clr-namespace:Bonsai.Resources;assembly=Bonsai.System"
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
                  xmlns:p1="clr-namespace:Bonsai.Numerics.Distributions;assembly=Bonsai.Numerics"
-                 xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
                  xmlns:scr="clr-namespace:Bonsai.Scripting;assembly=Bonsai.Scripting"
+                 xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
     <Nodes>
@@ -244,7 +244,7 @@
               <Combinator xsi:type="rx:Timestamp" />
             </Expression>
             <Expression xsi:type="MemberSelector">
-              <Selector>Timestamp</Selector>
+              <Selector>Timestamp.TimeOfDay</Selector>
             </Expression>
             <Expression xsi:type="MulticastSubject">
               <Name>Time</Name>
@@ -278,7 +278,7 @@
               <Combinator xsi:type="rx:Timestamp" />
             </Expression>
             <Expression xsi:type="MemberSelector">
-              <Selector>Timestamp</Selector>
+              <Selector>Timestamp.TimeOfDay</Selector>
             </Expression>
             <Expression xsi:type="MulticastSubject">
               <Name>Time</Name>
@@ -323,7 +323,7 @@
               <LocationX>0</LocationX>
               <LocationY>0</LocationY>
               <Layer>0</Layer>
-              <Diameter>0.5</Diameter>
+              <Diameter>0</Diameter>
               <ColorR>1</ColorR>
               <ColorG>1</ColorG>
               <ColorB>1</ColorB>
@@ -343,10 +343,10 @@
             <Edge From="4" To="7" Label="Source1" />
             <Edge From="5" To="6" Label="Source1" />
             <Edge From="6" To="7" Label="Source2" />
-            <Edge From="6" To="9" Label="Source1" />
             <Edge From="6" To="19" Label="Source1" />
             <Edge From="7" To="35" Label="Source2" />
             <Edge From="7" To="8" Label="Source1" />
+            <Edge From="7" To="9" Label="Source1" />
             <Edge From="9" To="10" Label="Source1" />
             <Edge From="10" To="11" Label="Source1" />
             <Edge From="11" To="12" Label="Source1" />
@@ -422,7 +422,7 @@
         <Combinator xsi:type="rx:Timestamp" />
       </Expression>
       <Expression xsi:type="MemberSelector">
-        <Selector>Timestamp</Selector>
+        <Selector>Timestamp.TimeOfDay</Selector>
       </Expression>
       <Expression xsi:type="BehaviorSubject">
         <Name>Time</Name>
@@ -481,8 +481,8 @@
               <scr:Expression>new(
 Item1 as CircleColour,
 Item2 as Diameter,
-Item3 as X_Diameter,
-Item4 as Y_Diameter,
+Item3 as X_Location,
+Item4 as Y_Location,
 Item5 as Time,
 Item6 as Phase
 )</scr:Expression>
