@@ -9,3 +9,5 @@ Follow instructions on this pages to use glasses. You will have downloaded 3 pie
 
 To use time sync (draft): 
 With the pupil capturre open (does not need to be recording) run PupilLabs_TimeSync.py. It should print out the PupilLabs timestamp and the (rught) eye pupil diameter. In future this will be changed to allowed it to recieve a signal sent from Bonsai and then it will write both the bonsai timestamp and the pupil labs time stamp to a csv for later syncing. 
+
+Comparisons to EyeLink:
